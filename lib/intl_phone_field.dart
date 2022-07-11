@@ -414,13 +414,13 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
         if (!widget.disableLengthCheck && value != null) {
           return value.length >= _selectedCountry.minLength &&
                   value.length <= _selectedCountry.maxLength
-              ? null
+              ? widget.invalidNumberMessage
               : widget.invalidNumberMessage;
         }
 
         return validatorMessage;
       },
-//       maxLength: widget.disableLengthCheck ? null : _selectedCountry.maxLength,
+      maxLength: widget.disableLengthCheck ? null : _selectedCountry.maxLength,
       keyboardType: widget.keyboardType,
       inputFormatters: widget.inputFormatters,
       enabled: widget.enabled,
