@@ -425,7 +425,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
       inputFormatters: <TextInputFormatter>[
         LengthLimitingTextInputFormatter(_selectedCountry.maxLength),
         FilteringTextInputFormatter.digitsOnly
-      ],,
+      ],
       enabled: widget.enabled,
       keyboardAppearance: widget.keyboardAppearance,
       autofocus: widget.autofocus,
