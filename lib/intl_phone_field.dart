@@ -422,7 +422,10 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
       },
       maxLength: widget.disableLengthCheck ? null : _selectedCountry.maxLength,
       keyboardType: widget.keyboardType,
-      inputFormatters: widget.inputFormatters,
+      inputFormatters: <TextInputFormatter>[
+        LengthLimitingTextInputFormatter(_selectedCountry.maxLength),
+        FilteringTextInputFormatter.digitsOnly
+      ],,
       enabled: widget.enabled,
       keyboardAppearance: widget.keyboardAppearance,
       autofocus: widget.autofocus,
